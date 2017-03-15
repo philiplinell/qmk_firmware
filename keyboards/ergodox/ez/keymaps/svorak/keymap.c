@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |   <  |   @  |   {  |   }  |   |  |  VOL |           |      |   Up |   7  |   8  |   9  |   *  |   F12  |
  * |--------+------+------+------+------+------|  UP  |           |      |------+------+------+------+------+--------|
- * |        |   >  |   '  |   (  |   )  |   §  |------|           |------| Down |   4  |   5  |   6  |   +  |        |
+ * |        |   >  |   '  |   (  |   )  |   &  |------|           |------| Down |   4  |   5  |   6  |   +  |        |
  * |--------+------+------+------+------+------|  VOL |           |      |------+------+------+------+------+--------|
- * |        |   %  |   &  |   [  |   ]  |   ~  | DOWN |           |      |   /  |   1  |   2  |   3  |   \  |        |
+ * |        |   %  |   §  |   [  |   ]  |   ~  | DOWN |           |      |   /  |   1  |   2  |   3  |   \  |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |    . |   0  |   =  |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -79,8 +79,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // left hand
        KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_MUTE,
        KC_TRNS,NO_LESS,NO_AT,  NO_LCBR,NO_RCBR,NO_PIPE,KC_VOLU,
-       KC_TRNS,NO_GRTR,NO_APOS, NO_LPRN,NO_RPRN,KC_GRV,
-       KC_TRNS,KC_PERC,KC_CIRC,NO_LBRC,NO_RBRC,KC_TILD,KC_VOLD,
+       KC_TRNS,NO_GRTR,NO_APOS, NO_LPRN,NO_RPRN,KC_CIRC,
+       KC_TRNS,KC_PERC,KC_GRV,NO_LBRC,NO_RBRC,KC_TILD,KC_VOLD,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
                                        KC_TRNS,KC_TRNS,
                                                KC_TRNS,
