@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
  * | LShift |   .  |   Q  |   J  |   K  |   X  |      |           |      |   B  |   M  |   W  |   V  |Z/Ctrl| RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |Grv/L1|      |AltShf| Left | Right|                                       |  Up  | Down |   [  |   ]  | ~L1  |
+ *   |Grv/L1|      |AltShf|      |      |                                       |AltTab|      |   [  |   ]  | ~L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | App  | LGui |       | Alt  |Ctrl/Esc|
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,         KC_LBRC,        KC_QUOT, KC_SCLN, KC_P,   KC_Y,   TG(1),
         KC_LCTL,        KC_A,           KC_O,    KC_E,   KC_U,   KC_I,
         KC_LSFT,        KC_DOT, KC_Q,    KC_J,   KC_K,   KC_X,   ALL_T(KC_NO),
-        LT(SYMB,KC_GRV),KC_TRNS, LALT(KC_LSFT),  KC_LEFT,KC_RGHT,
+        LT(SYMB,KC_GRV),KC_NO, LALT(KC_LSFT),  KC_NO,    KC_NO,
                                               ALT_T(KC_APP),  KC_LGUI,
                                                               KC_HOME,
 				                           GUI_T(KC_SPC), KC_BSPC, LT(2,KC_END),
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              TG(1),       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,             KC_COMMA,
                           KC_D,   KC_H,   KC_T,   KC_N,   LT(MDIA, KC_S),   LT(1,KC_SLSH),
              MEH_T(KC_NO),KC_B,   KC_M,   KC_W,   KC_V,   CTL_T(KC_Z),      KC_RSFT,
-                                  KC_UP,  KC_DOWN,NO_LBRC,NO_RBRC,          KC_FN1,
+				                  LALT(KC_TAB),  KC_NO, NO_LBRC,NO_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
              KC_PGUP,
 				     ALT_T(KC_PGDN),KC_TAB, KC_ENT
