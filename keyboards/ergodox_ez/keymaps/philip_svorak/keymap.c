@@ -2,13 +2,16 @@
 #include "debug.h"
 #include "action_layer.h"
 
-// Include keymap swedish from github.lindhe's branch
 #include "keymap_swedish.h"
+
+// Source: https://github.com/qmk/qmk_firmware/blob/4764e7712109be63df6395d70b069bceb0258e61/docs/config_options.md#behaviors-that-can-be-configured
+// And from keyboards/ergodox_ez README: "You may want to enable QMK_KEYS_PER_SCAN because the Ergodox has a relatively slow scan rate."
+#define QMK_KEYS_PER_SCAN 4
 
 #define BASE 0 // Default layer
 #define SYMB 1 // Symbols
 #define ARROW 2 // Arrow and number keys
-#define MDIA 3 // Mouse and Media keys
+#define MDIA 3 // Mouse and Media keys (never used, but kept for reference)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -20,16 +23,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | Ctrl   |A / L2|   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |S / L2|    -   |
  * |--------+------+------+------+------+------| Hyper|           |Hyper |------+------+------+------+------+--------|
- * | LShift |   .  |   Q  |   J  |   K  |   X  |      |           |      |   B  | M/L3 |   W  |   V  |Z/Ctrl| RShift |
+ * | LShift |   .  |   Q  |   J  |   K  |   X  |      |           |      |   B  | M/L3 |   W  |   V  |   Z  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |  §   |   <  |   >  |      |Alfred|                                       |   '  |   ´  |   [  |   ]  | ~L1  |
+ *   |  §   |   <  |   >  |      |Alfred|                                       |  ESC |   '  |   ´  |      | ~L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | App  | Home |       | PgUp |  AltGr |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | End  |       |PgDown|        |      |
  *                                 | Space| LGui |------|       |------|   L1   |Enter |
- *                                 |      | (cmd)| Alt  |       |Alt/ES|        |      |
+ *                                 |      | (cmd)| Alt  |       | Alt  |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -48,11 +51,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_DEL,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,              KC_BSPC,
         MEH(KC_NO),     KC_F,   KC_G,   KC_C,   KC_R,   KC_L,             MT((MOD_LCTL | MOD_LALT), KC_COMMA),
 				                  KC_D,   KC_H,   KC_T,   KC_N,   LT(2, KC_S),    KC_SLSH,
-        ALL_T(KC_NO), KC_B,   LT(3,KC_M),   KC_W,   KC_V,   CTL_T(KC_Z),      KC_RSFT,
-                          NO_APOS,  NO_ACUT, NO_LBRC,NO_RBRC,          KC_FN1,
+        ALL_T(KC_NO), KC_B,   LT(3,KC_M),   KC_W,   KC_V,   KC_Z,      KC_RSFT,
+                          KC_ESC,  NO_APOS, NO_ACUT, KC_NO, KC_FN1,
              KC_PGUP,        KC_RALT,
              KC_PGDN,
-             ALT_T(KC_ESC), MO(1), KC_ENT
+             KC_LALT, MO(1), KC_ENT
     ),
 /* Keymap 1: Symbol Layer
  *
