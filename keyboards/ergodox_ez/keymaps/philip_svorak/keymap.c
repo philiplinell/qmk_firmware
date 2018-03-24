@@ -62,9 +62,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |  F1  |  F2  |  F3  |  F4  |  F5  | MUTE |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |    '   |   ?  |   {  |   }  |   @  |   |  |      |           |      |      |      |      |      |      |   F12  |
+ * |        |   ?  |   {  |   }  |   @  |   |  |      |           |      |      |      |   =  |  >   |      |   F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |    =   |   >  |   (  |   )  |   $  |   ^  |------|           |------|  /   |   <  |   -  |  >   |      |        |
+ * |        |   '  |   (  |   )  |   $  |   ^  |------|           |------|  /   |   <  |   -  |  >   |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |   \  |   [  |   ]  |   &  |   ~  |      |           |      |  \   |      |      |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -82,8 +82,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SYMB] = KEYMAP(
        // left hand
        KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_MUTE,
-       NO_APOS,LSFT(NO_PLUS), NO_LCBR_MAC, NO_RCBR_MAC, NO_AT, NO_PIPE_MAC,KC_TRNS,
-       LSFT(KC_0),NO_GRTR_MAC,   NO_LPRN, NO_RPRN,NO_DLR,NO_CIRC,
+       KC_TRNS,LSFT(NO_PLUS), NO_LCBR_MAC, NO_RCBR_MAC, NO_AT, NO_PIPE_MAC,KC_TRNS,
+       KC_TRNS,NO_APOS,   NO_LPRN, NO_RPRN,NO_DLR,NO_CIRC,
        KC_TRNS,NO_BSLS_MAC,      NO_LBRC, NO_RBRC,KC_CIRC,NO_TILD,KC_TRNS,
        KC_TRNS,KC_TRNS,       KC_TRNS, KC_TRNS,KC_TRNS,
                                        KC_TRNS,KC_TRNS,
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              KC_TRNS, KC_TRNS, KC_TRNS,
        // right hand
        KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
-       KC_TRNS, KC_NO,   KC_NO,   KC_NO,    KC_NO,    KC_NO, KC_F12,
+       KC_TRNS, KC_NO,   KC_NO,   LSFT(KC_0),    NO_GRTR_MAC,    KC_NO, KC_F12,
        LSFT(KC_7),  NO_LESS_MAC,  KC_SLSH, NO_GRTR_MAC, KC_NO,  KC_NO,
        KC_TRNS, NO_BSLS_MAC,   KC_NO,   KC_NO,    KC_NO,    KC_NO, KC_TRNS,
                          KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_TRNS,
