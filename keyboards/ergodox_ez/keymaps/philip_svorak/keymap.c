@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |  F1  |  F2  |  F3  |  F4  |  F5  | MUTE |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |   ?  |   {  |   }  |   @  |   |  |      |           |      |      |      |      |      |      |   F12  |
+ * |    '   |   ?  |   {  |   }  |   @  |   |  |      |           |      |      |      |      |      |      |   F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |    =   |   >  |   (  |   )  |   $  |   ^  |------|           |------|  /   |   <  |   -  |  >   |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SYMB] = KEYMAP(
        // left hand
        KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_MUTE,
-       KC_TRNS,LSFT(NO_PLUS), NO_LCBR_MAC, NO_RCBR_MAC, NO_AT, NO_PIPE_MAC,KC_TRNS,
+       NO_APOS,LSFT(NO_PLUS), NO_LCBR_MAC, NO_RCBR_MAC, NO_AT, NO_PIPE_MAC,KC_TRNS,
        LSFT(KC_0),NO_GRTR_MAC,   NO_LPRN, NO_RPRN,NO_DLR,NO_CIRC,
        KC_TRNS,NO_BSLS_MAC,      NO_LBRC, NO_RBRC,KC_CIRC,NO_TILD,KC_TRNS,
        KC_TRNS,KC_TRNS,       KC_TRNS, KC_TRNS,KC_TRNS,
