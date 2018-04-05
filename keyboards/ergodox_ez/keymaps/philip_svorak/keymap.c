@@ -19,13 +19,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |   ESC  |   1  |   2  |   3  |   4  |   5  | DEL  |           | DEL  |   6  |   7  |   8  |   9  |   0  |Backspace|
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab/C+M|   Å  |   Ä  |   Ö  |   P  |   Y  | MEH  |           | MEH  |   F  |   G  |   C  |   R  |   L  |, / C+M |
+ * |  Tab   |   Å  |   Ä  |   Ö  |   P  |   Y  | MEH  |           | MEH  |   F  |   G  |   C  |   R  |   L  |, / C+M |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | Ctrl   |A / L2|   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |S / L2|    -   |
+ * |  Ctrl  |A / L2|   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |S / L2|    -   |
  * |--------+------+------+------+------+------| Hyper|           |Hyper |------+------+------+------+------+--------|
  * | LShift |   .  |   Q  |   J  |   K  |   X  |      |           |      |   B  | M/L3 |   W  |   V  |   Z  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |  §   |   <  |   >  |      |Alfred|                                       |  ESC |   '  |   ´  |      | ~L1  |
+ *   |  §   |   <  |   >  |      |Alfred|                                       |  ESC |   '  |   ´  |   `  | ~L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | App  | Home |       | PgUp |  AltGr |
@@ -39,21 +39,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_ESC,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_DEL,
-        MT((MOD_LCTL | MOD_LALT), KC_TAB),         KC_LBRC,        KC_QUOT, KC_SCLN, KC_P,   KC_Y,   MEH(KC_NO),
-        KC_LCTL,        LT(2, KC_A),    KC_O,    KC_E,   KC_U,   KC_I,
-        KC_LSFT,        KC_DOT,         KC_Q,   KC_J,    KC_K,   KC_X,   ALL_T(KC_NO),
-        NO_LESS,         NO_LESS_MAC, NO_GRTR_MAC, KC_NO,   LGUI(KC_SPC),
+        KC_ESC,         KC_1,           KC_2,    KC_3,    KC_4,   KC_5,   KC_DEL,
+        KC_TAB,         KC_LBRC,        KC_QUOT, KC_SCLN, KC_P,   KC_Y,   MEH(KC_NO),
+        KC_LCTL,        LT(2, KC_A),    KC_O,    KC_E,    KC_U,   KC_I,
+        KC_LSFT,        KC_DOT,         KC_Q,    KC_J,    KC_K,   KC_X,   ALL_T(KC_NO),
+        NO_LESS,        NO_LESS_MAC,    NO_GRTR_MAC, KC_NO,   LGUI(KC_SPC),
                                               ALT_T(KC_APP),  KC_HOME,
                                                               KC_END,
-        KC_SPC, KC_LGUI,    KC_LALT,
+                                          KC_SPC, KC_LGUI,    KC_LALT,
         // right hand
-             KC_DEL,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,              KC_BSPC,
-        MEH(KC_NO),     KC_F,   KC_G,   KC_C,   KC_R,   KC_L,             MT((MOD_LCTL | MOD_LALT), KC_COMMA),
-				                  KC_D,   KC_H,   KC_T,   KC_N,   LT(2, KC_S),    KC_SLSH,
-        ALL_T(KC_NO), KC_B,   LT(3,KC_M),   KC_W,   KC_V,   KC_Z,      KC_RSFT,
-                          KC_ESC,  NO_APOS, NO_ACUT, KC_NO, KC_FN1,
-             KC_PGUP,        KC_RALT,
+        KC_DEL,         KC_6,   KC_7,      KC_8,   KC_9,         KC_0,           KC_BSPC,
+        MEH(KC_NO),     KC_F,   KC_G,      KC_C,   KC_R,         KC_L,           MT((MOD_LCTL | MOD_LALT), KC_COMMA),
+  		                  KC_D,   KC_H,      KC_T,   KC_N,         LT(2, KC_S),    KC_SLSH,
+        ALL_T(KC_NO),   KC_B,   LT(3,KC_M),KC_W,   KC_V,         KC_Z,           KC_RSFT,
+                                KC_ESC,    NO_APOS,NO_ACUT,      S(NO_ACUT),     KC_FN1,
+             KC_PGUP, KC_RALT,
              KC_PGDN,
              KC_LALT, MO(1), KC_ENT
     ),
