@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |   '  |   (  |   )  |   $  |   ^  |------|           |------|  /   |   <  |   -  |  >   |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   `  |   [  |   ]  |   &  |   ~  |      |           |      |  \   |M_MAIL|      |      |      |        |
+ * |        |   `  |   [  |   ]  |   &  |   ~  |      |           |      |  \   |      |      |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
        KC_TRNS, KC_NO,   KC_NO,   LSFT(KC_0),    NO_GRTR_MAC,    KC_NO, KC_F12,
        LSFT(KC_7),  NO_LESS_MAC,  KC_SLSH, NO_GRTR_MAC, KC_NO,  KC_NO,
-       KC_TRNS, NO_BSLS_MAC,   MACRO_EXAMPLE_MAIL,   KC_NO,    KC_NO,    KC_NO, KC_TRNS,
+       KC_TRNS, NO_BSLS_MAC,   KC_NO,   KC_NO,    KC_NO,    KC_NO, KC_TRNS,
                          KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Arrowkeys and Numkey
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |        |M-MAIL|      |      |      |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |      |      |  UP  |      |      |      |           |      |      |   7  |   8  |  9   |  *   |    +   |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 [ARROW] = LAYOUT_ergodox(
-       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO, MACRO_EXAMPLE_MAIL, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
        KC_NO, KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_NO,
        KC_NO, KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
        KC_NO, KC_MPLY, KC_NO  , KC_MRWD, KC_MFFD, KC_NO, KC_TRNS,
