@@ -15,7 +15,8 @@
 #define MDIA 3 // Mouse and Media keys (never used, but kept for reference)
 
 enum custom_keycodes {
-  MACRO_GRAVE_KEY = SAFE_RANGE
+  MACRO_GRAVE_KEY = SAFE_RANGE,
+  MACRO_EXAMPLE_MAIL
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -71,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |   '  |   (  |   )  |   $  |   ^  |------|           |------|  /   |   <  |   -  |  >   |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   `  |   [  |   ]  |   &  |   ~  |      |           |      |  \   |      |      |      |      |        |
+ * |        |   `  |   [  |   ]  |   &  |   ~  |      |           |      |  \   |M_MAIL|      |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -98,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
        KC_TRNS, KC_NO,   KC_NO,   LSFT(KC_0),    NO_GRTR_MAC,    KC_NO, KC_F12,
        LSFT(KC_7),  NO_LESS_MAC,  KC_SLSH, NO_GRTR_MAC, KC_NO,  KC_NO,
-       KC_TRNS, NO_BSLS_MAC,   KC_NO,   KC_NO,    KC_NO,    KC_NO, KC_TRNS,
+       KC_TRNS, NO_BSLS_MAC,   MACRO_EXAMPLE_MAIL,   KC_NO,    KC_NO,    KC_NO, KC_TRNS,
                          KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
@@ -196,6 +197,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       case MACRO_GRAVE_KEY:
         // send ` without needing to type something afterwords
         SEND_STRING (SS_LSFT(SS_RALT("=")));
+        return false;
+      case MACRO_EXAMPLE_MAIL:
+        // type an example mail
+        // @ is represented as ALGR(KC_2) which is RALT(KC_2)
+        SEND_STRING ("arthur.dent"SS_RALT("2")"example.com" );
         return false;
     }
   }
